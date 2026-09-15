@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "document-extractor"
+version = "0.1.0"
+description = "A tool for extracting fields from documents using agents."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "uvicorn[standard]>=0.52.1",
+    "pydantic-settings>=2.14.2",
+    "ollama>=0.6.2",
+]
+
+[tool.setuptools]
+packages = ["src"]
+py-modules = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint] # select rules to run, see https://beta.ruff.rs/docs/rules/
+select = ["E", "F", "I", "UP", "B"] # E: pycodestyle errors, F: pyflakes, I: isort, UP: unimport, B: bugbear
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.Path", "fastapi.Body"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: tests that need a running Ollama server",
+]
+filterwarnings = ["ignore::UserWarning:starlette.*"]
