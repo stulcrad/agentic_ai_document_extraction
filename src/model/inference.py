@@ -22,7 +22,10 @@ def normalise(text: str) -> str:
     # Step 2: Collapse whitespace
     text = " ".join(text.split())
 
-    # Step 3: Casefold
+    # Step 3: Drop quote characters; the models often swaps " for ' or typographic quotes
+    text = text.translate(str.maketrans("", "", "\"'“”‘’"))
+
+    # Step 4: Casefold
     text = text.casefold()
 
     return text

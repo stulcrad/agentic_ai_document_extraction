@@ -1,0 +1,39 @@
+services:
+  ollama:
+    image: ollama/ollama:0.32.15
+    volumes:
+      # Named volume: the model survives rebuilds and `docker compose down`
+      - ollama-models:/root/.ollama
+    # No `ports:` on purpose: only the api container talks to Ollama, over the compose network.
+    healthcheck:
+      # The image has the ollama CLI but no curl; `ollama list` fails until the server answers.
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  api:
+    # Build from the Dockerfile in this folder
+    build: .
+    ports:
+      # host:container. localhost:8000 on your machine reaches port 8000 in the container.
+      - "8000:8000"
+    environment:
+      # The service name is the hostname on the compose network
+      OLLAMA_HOST: http://ollama:11434
+      MODEL_NAME: qwen3:4b-instruct-2507-q4_K_M
+    depends_on:
+      ollama:
+        # Wait until Ollama's healthcheck passes, not merely until its container is running.
+        condition: service_healthy
+    healthcheck:
+      # /health returns 503 until the model is ready; urlopen raises on a 503, so the check fails until then.
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20m
+
+volumes:
+  ollama-models:
+  

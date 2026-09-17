@@ -1,0 +1,9 @@
+.git
+.vscode
+.env
+**/__pycache__/
+.pytest_cache
+.ruff_cache
+data/raw
+tests
+Case_study_Agentic_AI_Engineer.pdf

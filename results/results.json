@@ -1,0 +1,600 @@
+{
+  "summary": {
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "service_url": "http://localhost:8000",
+    "run_at": "2026-09-17T11:28:34+00:00",
+    "documents": 6,
+    "documents_failed": 0,
+    "fields_scored": 42,
+    "field_accuracy": 0.81,
+    "recall_when_stated": 0.852,
+    "hallucination_rate_when_absent": 0.267,
+    "confidently_wrong": 7,
+    "flagged_unverified": 3,
+    "flagged_and_actually_wrong": 0,
+    "flagged_but_correct": 3,
+    "outcomes": {
+      "correct": 23,
+      "correct_null": 11,
+      "missed": 1,
+      "wrong": 3,
+      "hallucinated": 4
+    }
+  },
+  "documents": [
+    {
+      "doc_id": "distributor_baseline",
+      "elapsed_seconds": 198.9,
+      "prompt_tokens": 2535,
+      "truncated": false,
+      "fields_right": 5
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "elapsed_seconds": 187.2,
+      "prompt_tokens": 3080,
+      "truncated": false,
+      "fields_right": 7
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "elapsed_seconds": 114.6,
+      "prompt_tokens": 2150,
+      "truncated": false,
+      "fields_right": 7
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "elapsed_seconds": 206.1,
+      "prompt_tokens": 3043,
+      "truncated": false,
+      "fields_right": 6
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "elapsed_seconds": 291.9,
+      "prompt_tokens": 4392,
+      "truncated": true,
+      "fields_right": 4
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "elapsed_seconds": 65.7,
+      "prompt_tokens": 1407,
+      "truncated": false,
+      "fields_right": 5
+    }
+  ],
+  "fields": [
+    {
+      "doc_id": "distributor_baseline",
+      "field": "contract_type",
+      "gold": "Distributor",
+      "predicted_value": "Distributor",
+      "predicted_quote": "The Principal appoints the Distributor as a non-exclusive distributor",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "distributor_baseline",
+      "field": "parties",
+      "gold": [
+        "Co-Diagnostics, Inc.",
+        "PreCheck Health Services, Inc."
+      ],
+      "predicted_value": [
+        {
+          "name": "Co-Diagnostics, Inc.",
+          "role": "Principal"
+        },
+        {
+          "name": "PreCheck Health Services, Inc.",
+          "role": "Distributor"
+        }
+      ],
+      "predicted_quote": "Between: Co-Diagnostics, Inc. (herein referred to as \"Principal\") And PreCheck Health Services, Inc. (herein referred to as \"Distributor\")",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "distributor_baseline",
+      "field": "agreement_date",
+      "gold": "2020-03-19",
+      "predicted_value": "2020-03-19",
+      "predicted_quote": "Agreement made this 19t h day of March, 2020",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "distributor_baseline",
+      "field": "effective_date",
+      "gold": null,
+      "predicted_value": "2021-03-18",
+      "predicted_quote": "This Agreement shall be in effect until March 18. 2021",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "hallucinated",
+      "confidently_wrong": true
+    },
+    {
+      "doc_id": "distributor_baseline",
+      "field": "expiration_date",
+      "gold": "2021-03-18",
+      "predicted_value": "2021-03-18",
+      "predicted_quote": "This Agreement shall be in effect until March 18. 2021",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "distributor_baseline",
+      "field": "renewal_term",
+      "gold": null,
+      "predicted_value": "unless sooner terminated by either party upon (30) days written notice, without cause",
+      "predicted_quote": "unless sooner terminated by either party upon (30) days written notice, without cause",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "hallucinated",
+      "confidently_wrong": true
+    },
+    {
+      "doc_id": "distributor_baseline",
+      "field": "governing_law",
+      "gold": "Texas",
+      "predicted_value": "Texas",
+      "predicted_quote": "This Agreement shall be construed in accordance with and governed by the laws of the State of Texas",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "field": "contract_type",
+      "gold": "Transportation",
+      "predicted_value": "Transportation",
+      "predicted_quote": "TRANSPORTATION SERVICE AGREEMENT",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "field": "parties",
+      "gold": [
+        "Great Lakes Gas Transmission Limited Partnership",
+        "ANR PIPELINE COMPANY"
+      ],
+      "predicted_value": [
+        {
+          "name": "Great Lakes Gas Transmission Limited Partnership",
+          "role": "Transporter"
+        },
+        {
+          "name": "ANR PIPELINE COMPANY",
+          "role": "Shipper"
+        }
+      ],
+      "predicted_quote": "This Transportation Service Agreement (Agreement) is entered into by Great Lakes Gas Transmission Limited Partnership (Transporter) and ANR PIPELINE COMPANY (Shipper).",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "field": "agreement_date",
+      "gold": "2015-12-14",
+      "predicted_value": "2015-12-14",
+      "predicted_quote": "Dated: December 14, 2015",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "field": "effective_date",
+      "gold": "2016-11-01",
+      "predicted_value": "2016-11-01",
+      "predicted_quote": "1. EFFECTIVE DATE: November 01, 2016",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "field": "expiration_date",
+      "gold": "2017-10-31",
+      "predicted_value": "2017-10-31",
+      "predicted_quote": "6. TERM: November 01, 2014 to October 31, 2017",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "field": "renewal_term",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "transportation_three_dates",
+      "field": "governing_law",
+      "gold": "Michigan",
+      "predicted_value": "Michigan",
+      "predicted_quote": "Any controversy between the parties arising under this Agreement and not resolved by the parties shall be determined in accordance with the laws of the State of Michigan.",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "field": "contract_type",
+      "gold": "Sponsorship",
+      "predicted_value": "Sponsorship",
+      "predicted_quote": "SPONSORSHIP AGREEMENT",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "field": "parties",
+      "gold": [
+        "American Champion Media, Inc.",
+        "Shun Li De Commerce & Trading Ltd"
+      ],
+      "predicted_value": [
+        {
+          "name": "Shun Li De Commerce & Trading Ltd",
+          "role": "Sponsor"
+        },
+        {
+          "name": "American Champion Media, Inc.",
+          "role": "host and producer"
+        }
+      ],
+      "predicted_quote": "This Sponsorship Agreement (the \"Agreement\") dated as of April 14, 2000 is made by and between Shun Li De Commerce & Trading Ltd (\"SLD\") a Beijing company, with headquarters at Xin Xing Dong Xiang, Bldg 1 Suite 1413, Xi Cheng District, Beijing, China (the \"Sponsor\") and ACM.",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "field": "agreement_date",
+      "gold": "2000-04-14",
+      "predicted_value": "2000-04-14",
+      "predicted_quote": "dated as of April 14, 2000",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "field": "effective_date",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "field": "expiration_date",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "field": "renewal_term",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "sponsorship_two_jurisdictions",
+      "field": "governing_law",
+      "gold": "California; Hong Kong",
+      "predicted_value": "California and Hong Kong",
+      "predicted_quote": "This Agreement shall be governed by, and construed and enforced in accordance with, the laws of the State of California and the laws of Hong Kong.",
+      "status": "unverified",
+      "reason": "value_not_in_quote",
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "field": "contract_type",
+      "gold": "Co-Branding",
+      "predicted_value": "Co-Branding",
+      "predicted_quote": "CO-BRANDING AGREEMENT",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "field": "parties",
+      "gold": [
+        "Lucent Technologies Inc.",
+        "mPhase Technologies Inc."
+      ],
+      "predicted_value": [
+        {
+          "name": "Lucent Technologies Inc.",
+          "role": "a Party"
+        },
+        {
+          "name": "mPhase Technologies Inc.",
+          "role": "a Party"
+        }
+      ],
+      "predicted_quote": "This Agreement is made this 21st day of January 2003 by and between Lucent Technologies Inc., a Delaware corporation having a principal place of business at 600 Mountain Avenue, Murray Hill, New Jersey 07974 (\"Lucent\") and mPhase Technologies Inc., a New Jersey corporation located at 587 Connecticut Avenue, Norwalk, Connecticut 068545 (\"mPhase\") (each individually, \"a Party\" and, collectively, \"the Parties\")",
+      "status": "unverified",
+      "reason": "quote_not_in_doc",
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "field": "agreement_date",
+      "gold": "2003-01-21",
+      "predicted_value": "2003-01-21",
+      "predicted_quote": "Date:  01/21/03",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "field": "effective_date",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": "The Term of this Agreement will commence on the date above",
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "field": "expiration_date",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": "shall continue for a term of one (1) year",
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "field": "renewal_term",
+      "gold": null,
+      "predicted_value": "annually renew this agreement for a period of one year",
+      "predicted_quote": "mPhase shall have the right to annually renew this agreement for a period of one year upon each annual expiration with the written consent of Lucent",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "hallucinated",
+      "confidently_wrong": true
+    },
+    {
+      "doc_id": "cobranding_duration_only",
+      "field": "governing_law",
+      "gold": "New York",
+      "predicted_value": "New York",
+      "predicted_quote": "The validity, construction and performance of this Agreement shall be governed by the laws of the State of New York.",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "field": "contract_type",
+      "gold": "Other",
+      "predicted_value": "Service",
+      "predicted_quote": "This Consulting Agreement",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "wrong",
+      "confidently_wrong": true
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "field": "parties",
+      "gold": [
+        "Global Technologies, Ltd",
+        "Timothy Cabrera"
+      ],
+      "predicted_value": [
+        {
+          "name": "Global Technologies, Ltd",
+          "role": "Company"
+        },
+        {
+          "name": "Timothy Cabrera",
+          "role": "Consultant"
+        }
+      ],
+      "predicted_quote": "by and between Global Technologies, Ltd (hereinafter the \"Company\"), a Delaware corporation... and Timothy Cabrera (hereinafter the \"Consultant\"), an individual",
+      "status": "unverified",
+      "reason": "quote_not_in_doc",
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "field": "agreement_date",
+      "gold": "2020-01-02",
+      "predicted_value": "2020-01-02",
+      "predicted_quote": "as of this 2nd day of January 2020",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "field": "effective_date",
+      "gold": "2020-01-02",
+      "predicted_value": "2020-01-02",
+      "predicted_quote": "commencing on January 2, 2020",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "field": "expiration_date",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": "shall remain in effect for one (1) year or until Consultant completes the services requested",
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "field": "renewal_term",
+      "gold": null,
+      "predicted_value": "one (1) year or until Consultant completes the services requested",
+      "predicted_quote": "shall remain in effect for one (1) year or until Consultant completes the services requested",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "hallucinated",
+      "confidently_wrong": true
+    },
+    {
+      "doc_id": "consulting_truncated",
+      "field": "governing_law",
+      "gold": "Florida",
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "missed",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "field": "contract_type",
+      "gold": "Other",
+      "predicted_value": "Joint Venture",
+      "predicted_quote": "JOINT FILING AGREEMENT",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "wrong",
+      "confidently_wrong": true
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "field": "parties",
+      "gold": [
+        "ABP TRUST",
+        "ADAM D. PORTNOY"
+      ],
+      "predicted_value": [
+        {
+          "name": "ABP TRUST",
+          "role": "Undersigned"
+        }
+      ],
+      "predicted_quote": "The undersigned hereby agree that the Schedule 13G/A with respect to the shares of Class A Common Stock, $0.001 par value per share, of The RMR Group Inc., dated as of December 31, 2019, is, and any amendments thereto (including amendments on Schedule 13D) signed by each of the undersigned shall be, filed on behalf of each of us pursuant to and in accordance with the provisions of Rule 13d-1(k) under the Securities Exchange Act of 1934, as amended.",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "wrong",
+      "confidently_wrong": true
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "field": "agreement_date",
+      "gold": "2020-01-22",
+      "predicted_value": "2020-01-22",
+      "predicted_quote": "January 22, 2020 (Date)",
+      "status": "found_and_verified",
+      "reason": null,
+      "outcome": "correct",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "field": "effective_date",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "field": "expiration_date",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "field": "renewal_term",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    },
+    {
+      "doc_id": "joint_filing_not_a_commercial_contract",
+      "field": "governing_law",
+      "gold": null,
+      "predicted_value": null,
+      "predicted_quote": null,
+      "status": "not_found",
+      "reason": null,
+      "outcome": "correct_null",
+      "confidently_wrong": false
+    }
+  ]
+}

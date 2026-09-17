@@ -1,0 +1,104 @@
+{
+  "distributor_baseline": {
+    "title": "Distributor Agreement (Co-Diagnostics / PreCheck Health Services)",
+    "note": "Baseline: short, every core field stated explicitly. Minor OCR noise in the signing date ('19t h day of March, 2020').",
+    "source": "CUAD v1 (CC BY 4.0): PrecheckHealthServicesInc_20200320_8-K_EX-99.2_12070169_EX-99.2_Distributor Agreement.txt",
+    "gold": {
+      "contract_type": "Distributor",
+      "parties": [
+        "Co-Diagnostics, Inc.",
+        "PreCheck Health Services, Inc."
+      ],
+      "agreement_date": "2020-03-19",
+      "effective_date": null,
+      "expiration_date": "2021-03-18",
+      "renewal_term": null,
+      "governing_law": "Texas"
+    }
+  },
+  "transportation_three_dates": {
+    "title": "Transportation Service Agreement (Great Lakes Gas Transmission / ANR Pipeline)",
+    "note": "Three different dates: signed 2015-12-14, effective 2016-11-01, term 'November 01, 2014 to October 31, 2017'. Tests telling the dates apart.",
+    "source": "CUAD v1 (CC BY 4.0): TcPipelinesLp_20160226_10-K_EX-99.12_9454048_EX-99.12_Transportation Agreement.txt",
+    "gold": {
+      "contract_type": "Transportation",
+      "parties": [
+        "Great Lakes Gas Transmission Limited Partnership",
+        "ANR PIPELINE COMPANY"
+      ],
+      "agreement_date": "2015-12-14",
+      "effective_date": "2016-11-01",
+      "expiration_date": "2017-10-31",
+      "renewal_term": null,
+      "governing_law": "Michigan"
+    }
+  },
+  "sponsorship_two_jurisdictions": {
+    "title": "Sponsorship Agreement (American Champion Media / Shun Li De)",
+    "note": "Governing law names two jurisdictions (California and Hong Kong); the schema's description asks for one jurisdiction name.",
+    "source": "CUAD v1 (CC BY 4.0): PACIFICSYSTEMSCONTROLTECHNOLOGYINC_08_24_2000-EX-10.53-SPONSORSHIP AGREEMENT.txt",
+    "gold": {
+      "contract_type": "Sponsorship",
+      "parties": [
+        "American Champion Media, Inc.",
+        "Shun Li De Commerce & Trading Ltd"
+      ],
+      "agreement_date": "2000-04-14",
+      "effective_date": null,
+      "expiration_date": null,
+      "renewal_term": null,
+      "governing_law": "California; Hong Kong"
+    }
+  },
+  "cobranding_duration_only": {
+    "title": "Co-Branding Agreement (Lucent / mPhase)",
+    "note": "Term given only as a duration ('one (1) year'): CUAD computes 2004-01-21, our never-calculate rule says null. Renewal needs Lucent's written consent, so it is not automatic: CUAD says 'successive 1 year', our gold is null.",
+    "source": "CUAD v1 (CC BY 4.0): MphaseTechnologiesInc_20030911_10-K_EX-10.15_1560667_EX-10.15_Co-Branding Agreement.txt",
+    "gold": {
+      "contract_type": "Co-Branding",
+      "parties": [
+        "Lucent Technologies Inc.",
+        "mPhase Technologies Inc."
+      ],
+      "agreement_date": "2003-01-21",
+      "effective_date": null,
+      "expiration_date": null,
+      "renewal_term": null,
+      "governing_law": "New York"
+    }
+  },
+  "consulting_truncated": {
+    "title": "Consulting Agreement (Global Technologies / Timothy Cabrera)",
+    "note": "20.8k characters, over the 16k budget: the governing-law clause falls in the omitted middle, so a miss is expected. Consulting is not one of the 24 types -> Other. Term only as a duration: CUAD computes 2021-01-02, our gold is null.",
+    "source": "CUAD v1 (CC BY 4.0): GLOBALTECHNOLOGIESLTD_06_08_2020-EX-10.16-CONSULTING AGREEMENT.txt",
+    "gold": {
+      "contract_type": "Other",
+      "parties": [
+        "Global Technologies, Ltd",
+        "Timothy Cabrera"
+      ],
+      "agreement_date": "2020-01-02",
+      "effective_date": "2020-01-02",
+      "expiration_date": null,
+      "renewal_term": null,
+      "governing_law": "Florida"
+    }
+  },
+  "joint_filing_not_a_commercial_contract": {
+    "title": "Joint Filing Agreement for a Schedule 13G (ABP Trust / Adam D. Portnoy)",
+    "note": "Not a commercial contract but an SEC joint-filing statement; the word 'Joint' invites 'Joint Venture' (CUAD even files it under a joint-venture folder). Signatories appear only in the signature block.",
+    "source": "CUAD v1 (CC BY 4.0): RMRGROUPINC_01_22_2020-EX-99.1-JOINT FILING AGREEMENT.txt",
+    "gold": {
+      "contract_type": "Other",
+      "parties": [
+        "ABP TRUST",
+        "ADAM D. PORTNOY"
+      ],
+      "agreement_date": "2020-01-22",
+      "effective_date": null,
+      "expiration_date": null,
+      "renewal_term": null,
+      "governing_law": null
+    }
+  }
+}
